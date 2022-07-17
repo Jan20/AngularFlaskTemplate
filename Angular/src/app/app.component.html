@@ -1,0 +1,13 @@
+<div *ngIf="message | async as message">
+  <mat-grid-list [cols]=1 rowHeight="32em">
+    <mat-grid-tile>
+      <mat-card>
+        <mat-card-content>
+          <mat-card-title>
+            {{ message.message }}
+          </mat-card-title>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

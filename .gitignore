@@ -127,3 +127,51 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/dist
+/tmp
+/out-tsc
+# Only exists if Bazel was run
+/bazel-out
+
+# dependencies
+angular/node_modules
+
+# profiling files
+chrome-profiler-events*.json
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+angular/.vscode
+angular/.vscode/settings.json
+angular/.vscode/tasks.json
+angular/.vscode/launch.json
+angular/.vscode/extensions.json
+angular/.history/*
+
+# misc
+angular/.angular
+angular/.angular/cache
+angular/.sass-cache
+angular/connect.lock
+angular/coverage
+angular/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+angular/typings
+
+# System Files
+.DS_Store
+Thumbs.db

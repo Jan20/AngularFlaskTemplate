@@ -1,0 +1,34 @@
+version: "3.7"
+
+services:
+  Flask_Introduction:
+    container_name: Flask_Introduction
+    image: flask_introduction
+    ports:
+      - 8080:8080
+    networks:
+      - sample-network
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "5"
+        max-size: "50m"
+    restart: always
+
+  Angular_Introduction:
+    container_name: Angular_Introduction
+    image: angular_introduction
+    ports:
+      - 80:80
+    networks:
+      - sample-network
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "5"
+        max-size: "50m"
+    restart: always
+
+networks:
+  sample-network:
+    name: sample-network
