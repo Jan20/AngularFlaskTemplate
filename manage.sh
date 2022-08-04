@@ -1,8 +1,5 @@
 #!/bin/sh
 
-# Getting the script's path
-SCRIPT_HOME="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-
 build_flask() {
     echo "Building the Flask app"
     cd Flask
@@ -21,14 +18,21 @@ start_all() {
     docker-compose -f docker-compose.yml up -d
 }
 
-# 
+stop() {
+    docker-compose -f docker-compose.yml down
+}
+
+remove() {
+    docker-compose -f docker-compose.yml down
+    docker image rm angular_introduction
+    docker image rm flask_introduction
+}
+
 toLower() {
     echo $(echo  ${@} | tr '[:upper:]' '[:lower:]')
 }
 
-pushd ${SCRIPT_HOME} >/dev/null
 COMMAND=$(toLower ${1})
-shift || COMMAND=usage
 
 case "${COMMAND}" in
     "build")
@@ -37,5 +41,11 @@ case "${COMMAND}" in
     ;;
     "start")
         start_all
+    ;;
+    "stop")
+        stop
+    ;;
+    "remove")
+        remove
     ;;
 esac

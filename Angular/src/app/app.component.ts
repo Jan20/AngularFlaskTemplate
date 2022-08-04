@@ -10,7 +10,7 @@ import { RestService } from './rest.service';
 })
 export class AppComponent {
 
-  public message: Observable<Message> = this.restService.fetchMessage();
+  message: Observable<Message> = this.restService.fetchMessage();
 
   constructor(private readonly restService: RestService) {}
 }

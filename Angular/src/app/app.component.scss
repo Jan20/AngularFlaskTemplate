@@ -1,0 +1,15 @@
+.mat-card {
+  width: 250px;
+  height: 100px;
+  padding-top: 100px;
+  border-radius: 20px;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(240,218,57,1) 0%, rgba(197,100,36,1) 100%);
+  transition: box-shadow 1s, margin-top 1s, width 1s, height 1s, transform 0.7s;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.mat-card:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transform: scale(1.02);
+}
